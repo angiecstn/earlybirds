@@ -3,17 +3,21 @@
 - @categories.each do |category|
   = link_to category.name, root_path(category: category.id)
 - @articles.each do |article|
-  .container.mx-auto.mb-2.px-4.max-w-3xl.w-full.lg:flex
-    .h-48.lg:h-auto.lg:w-48.flex-none.bg-cover.rounded-t.lg:rounded-t-none.lg:rounded-l.text-center.overflow-hidden{style: "background-image: url(#{article["urlToImage"]})"}
-    .border-r.border-b.border-l.border-grey-light.lg:border-l-0.lg:border-t.lg:border-grey-light.bg-white.rounded-b.lg:rounded-b-none.lg:rounded-r.p-4.opacity-75
+  %section.grid-container
+    .border-r.border-b.border-l.border-grey-light.lg:border-l-0.lg:border-t.lg:border-grey-light.bg-white.rounded-b.lg:rounded-b-none.lg:rounded-r.p-4
       .mb-8
-      %div{id: dom_id(article)}
-        %h2.text-black.font-bold.text-xl.mb-2.my-4.article-header= article["header"]
-        #header
-          #imageplaceholder
-          = image_tag("trump.jpg")
-          %p.article-subheader= article["subheader"]
-          #subheader
-          %p.article-paragraph.article-body= article["body"]
-          #body
+        .wrapper
+        .box
+        %div{id: dom_id(article)}
+          .border-r.border-b.border-l.border-grey-light.lg:border-l-0.lg:border-t.lg:border-grey-light.bg-white.rounded-b.lg:rounded-b-none.lg:rounded-r.p-4
+            %h2.text-black.font-bold.text-xl.mb-2.my-4.article-header= article["header"]
+            #header
+          .wrapper
+          .box2  
+            #imageplaceholder
+            = image_tag("trump.jpg")
+            %p.article-subheader= article["subheader"]
+            #subheader
+            %p.article-paragraph.article-body= article["body"]
+            #body
        
