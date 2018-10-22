@@ -2,14 +2,20 @@
   = render partial: 'partials/navigation'
 - @categories.each do |category|
   = link_to category.name, root_path(category: category.id)
-.articlelist
-  - @articles.each do |article|
-    %div{id: dom_id(article)}
-      #header
-        %p= article.header
-      #subheader
-        %p= article.subheader
-      #body
-        %p= article.body
-      #imageplaceholder
-        = image_tag("trump.jpg")
+- @articles.each do |article|
+  .container.mx-auto.mb-2.px-4.max-w-3xl.w-full.lg:flex
+    .h-48.lg:h-auto.lg:w-48.flex-none.bg-cover.rounded-t.lg:rounded-t-none.lg:rounded-l.text-center.overflow-hidden{style: "background-image: url(#{article["urlToImage"]})"}
+    .border-r.border-b.border-l.border-grey-light.lg:border-l-0.lg:border-t.lg:border-grey-light.bg-white.rounded-b.lg:rounded-b-none.lg:rounded-r.p-4.opacity-75
+      .mb-8
+      %div{id: dom_id(article)}
+        %header
+          #header
+            %p= article.header
+          %subheader
+          #subheader
+            %p= article.subheader
+          %body
+          #body
+            %p= article.body
+          #imageplaceholder
+            = image_tag("trump.jpg")
