@@ -12,8 +12,8 @@
         #header
           #imageplaceholder
           = image_tag("trump.jpg")
+          %p.article-subheader= article["subheader"]
           #subheader
-            %p= article.subheader
+          %p.article-paragraph.article-body= article["body"]
           #body
-            %p= article.body
        
