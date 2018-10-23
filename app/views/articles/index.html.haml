@@ -4,21 +4,19 @@
   = link_to category.name, root_path(category: category.id)
 - @articles.each do |article|
   %section.grid-container
-    .border-r.border-b.border-l.border-grey-light.lg:border-l-0.lg:border-t.lg:border-grey-light.bg-white.rounded-b.lg:rounded-b-none.lg:rounded-r.p-4
-      .mb-8
-        .wrapper
-        .box
-        %div{id: dom_id(article)}
-          .border-r.border-b.border-l.border-grey-light.lg:border-l-0.lg:border-t.lg:border-grey-light.bg-white.rounded-b.lg:rounded-b-none.lg:rounded-r.p-4
-            %h1.text-black.font-bold.text-xl.mb-2.my-4.article-header= article["header"]
-            #header
-            %div.div2
-              #imageplaceholder
-              = image_tag("trump.jpg")
-              %div.div3
-                %p.article-subheader= article["subheader"]
-                #subheader
-                %p.article-paragraph.article-body= article["body"]
-                #body
+    .container.m-auto
+    %div{id: dom_id(article)}
+    %h1.text-black.font-bold.text-xl.mb-2.my-4.article-header= article["header"]
+    #header
+    %div.div2
+      #imageplaceholder
+      = image_tag("trump.jpg")
+      %div.div3
+        %p.article-subheader= article["subheader"]
+        #subheader
+        %p.article-paragraph.article-body= article["body"]
+        #body
+
+
 
         
